@@ -1,22 +1,10 @@
 function getComputerChoice() {
-    let num = Math.floor(Math.random() * 3);
-    if (num === 0) {
-        return 'Rock';
-    } else if (num === 1) {
-        return 'Paper';
-    } else if (num === 2) {
-        return 'Scissors';
+    switch(Math.floor(Math.random() * 3)){
+        case 0: 'Rock';
+        case 1: 'Paper';
+        case 2: 'Scissors';
     }
 }
-
-function getHumanChoice() {
-    let humanChoice = prompt('Choose one: Rock, Paper, or Scissors?', 'Rock');
-    humanChoice = String(humanChoice).charAt(0).toUpperCase() + String(humanChoice).slice(1).toLowerCase();
-    return humanChoice;
-}
-function playGame(){
-    let humanScore = 0
-    let computerScore = 0
 
     function playRound(humanChoice, computerChoice) {
         if (humanChoice === 'Paper'){
@@ -52,13 +40,9 @@ function playGame(){
         }
     }
 
-    for (i=0; i < 5; i++) {
-        const humanChoice = getHumanChoice()
-        const computerChoice = getComputerChoice()
-        playRound(humanChoice, computerChoice)
-        console.log('Player1 Score: ' + humanScore)
-        console.log('Computer Score: ' + computerScore)
-    }
-}
 
-playGame()
+const buttons = document.querySelector('#buttons');
+buttons.addEventListener('click', (e)=> {
+    const humanChoice = e.target.id;
+    console.log(humanChoice);
+});
