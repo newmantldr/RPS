@@ -1,9 +1,14 @@
 function getComputerChoice() {
+    choice = "";
     switch(Math.floor(Math.random() * 3)){
-        case 0: 'Rock';
-        case 1: 'Paper';
-        case 2: 'Scissors';
+        case 0: choice = 'Rock';
+                break;
+        case 1: choice = 'Paper';
+                break;
+        case 2: choice = 'Scissors';
+                break;
     }
+    return choice;
 }
 
     function playRound(humanChoice, computerChoice) {
@@ -44,5 +49,8 @@ function getComputerChoice() {
 const buttons = document.querySelector('#buttons');
 buttons.addEventListener('click', (e)=> {
     const humanChoice = e.target.id;
-    console.log(humanChoice);
+    const computerChoice = getComputerChoice();
+    console.log(humanChoice)
+    console.log(computerChoice)
+    playRound(humanChoice, computerChoice);
 });
