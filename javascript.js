@@ -60,11 +60,11 @@ buttons.addEventListener('click', (e)=> {
     if ((humanScore & computerScore) < 4){
         switch(winner){
             case 'human': humanScore += 1;
-                document.getElementById('score').textContent = 'Player: ${humanScore} vs Computer: ${computerScore}';
+                document.getElementById('score').textContent = `Player: ${humanScore} vs Computer: ${computerScore}`;
                 if (humanScore == 5) {
                     document.getElementById('winnerMessage').textContent = 'You win!';
                     const playAgain = document.createElement('button');
-                    playAgain.textContent('Play Again?');
+                    playAgain.textContent = 'Play Again?';
                     document.getElementById('winnerMessage').appendChild(playAgain);
                     playAgain.addEventListener('click', () => {
                         window.location.reload();
@@ -72,11 +72,11 @@ buttons.addEventListener('click', (e)=> {
                 }
                 break;
             case 'computer': computerScore += 1;
-                document.getElementById('score').textContent = 'Player: ${humanScore} vs Computer: ${computerScore}';
+                document.getElementById('score').textContent = `Player: ${humanScore} vs Computer: ${computerScore}`;
                 if (computerScore == 5) {
                     document.getElementById('winnerMessage').textContent = 'You lose!';
                     const playAgain = document.createElement('button');
-                    playAgain.textContent('Play Again?');
+                    playAgain.textContent = 'Play Again?';
                     document.getElementById('winnerMessage').appendChild(playAgain);
                     playAgain.addEventListener('click', () => {
                         window.location.reload();
